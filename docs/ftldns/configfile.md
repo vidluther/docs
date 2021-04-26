@@ -20,7 +20,7 @@ Use this option to disable deep CNAME inspection. This might be beneficial for v
 [Encrypted Server Name Indication (ESNI)](https://tools.ietf.org/html/draft-ietf-tls-esni-06) is certainly a good step into the right direction to enhance privacy on the web. It prevents on-path observers, including ISPs, coffee shop owners and firewalls, from intercepting the TLS Server Name Indication (SNI) extension by encrypting it. This prevents the SNI from being used to determine which websites users are visiting.
 
 ESNI will obviously cause issues for `pixelserv-tls` which will be unable to generate matching certificates on-the-fly when it cannot read the SNI. Cloudflare and Firefox are already enabling ESNI.
-According to the IEFT draft (link above), we can easily restore `piselserv-tls`'s operation by replying `NXDOMAIN` to `_esni.` subdomains of blocked domains as this mimics a "not configured for this domain" behavior.
+According to the IETF draft (link above), we can easily restore `pixelserv-tls`'s operation by replying `NXDOMAIN` to `_esni.` subdomains of blocked domains as this mimics a "not configured for this domain" behavior.
 
 #### `EDNS0_ECS=true|false` (PR [#851](https://github.com/pi-hole/FTL/pull/851)) {#block_edns0_ecs data-toc-label='EDNS ECS overwrite'}
 
@@ -59,7 +59,7 @@ Should `FTL` ignore queries coming from the local machine?
 
 #### `AAAA_QUERY_ANALYSIS=yes|no` {#aaaa_query_analysis data-toc-label='AAAA Query Analysis'}
 
-Should FTL analyze `AAAA` queries? The DNS server will handle `AAAA` queries the same way, reglardless of this setting. All this does is ignoring `AAAA` queries when computing the statistics of Pi-hole. This setting is considered obsolete and may be removed in a future version.
+Should FTL analyze `AAAA` queries? The DNS server will handle `AAAA` queries the same way, regardless of this setting. All this does is ignoring `AAAA` queries when computing the statistics of Pi-hole. This setting is considered obsolete and may be removed in a future version.
 
 #### `ANALYZE_ONLY_A_AND_AAAA=false|true` {#analyze_only_a_and_aaaa data-toc-label='Analyze A and AAAA Only'}
 
